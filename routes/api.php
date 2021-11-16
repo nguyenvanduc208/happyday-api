@@ -20,3 +20,14 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::apiResource('/image','Api\ImageController');
 Route::apiResource('/booking','Api\BookingController');
+Route::apiResource('/bookingdetail','Api\BookingDetailController');
+Route::apiResource('/checkdate','Api\CheckDateController');
+Route::apiResource('/contact', 'Api\ContactController');
+Route::apiResource('/about', 'Api\AboutController');
+Route::apiResource('/post', 'Api\PostController');
+Route::apiResource('/blog', 'Api\BlogController');
+Route::apiResource('/food', 'Api\FoodController');
+Route::apiResource('/rating', 'Api\RatingController');
+Route::apiResource('/room', 'Api\RoomController');
+Route::apiResource('/category', 'Api\CategoryController');
+Route::apiResource('/parent_category', 'Api\ParentCategoryController');

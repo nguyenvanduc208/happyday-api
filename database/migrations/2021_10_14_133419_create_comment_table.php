@@ -17,9 +17,14 @@ class CreateCommentTable extends Migration
             $table->id();
             $table->integer('customer_id');
             $table->text('post');
+            $table->integer('resort_id');
             $table->timestamps();
         });
     }
+    
+ 
+
+    
 
     /**
      * Reverse the migrations.
