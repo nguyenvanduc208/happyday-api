@@ -5,7 +5,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Room;
 use Illuminate\Http\Request;
 
-class RoomController extends Controller
+class ResortController extends Controller
 {
     // /**
      * Display a listing of the resource.

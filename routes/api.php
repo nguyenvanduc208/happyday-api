@@ -28,6 +28,6 @@ Route::apiResource('/post', 'Api\PostController');
 Route::apiResource('/blog', 'Api\BlogController');
 Route::apiResource('/food', 'Api\FoodController');
 Route::apiResource('/rating', 'Api\RatingController');
-Route::apiResource('/room', 'Api\RoomController');
-Route::apiResource('/category', 'Api\CategoryController');
+Route::apiResource('/resort', 'Api\ResortController');
+Route::apiResource('/category', 'Api\CateController');
 Route::apiResource('/parent_category', 'Api\ParentCategoryController');
