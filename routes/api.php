@@ -31,3 +31,7 @@ Route::apiResource('/rating', 'Api\RatingController');
 Route::apiResource('/resort', 'Api\ResortController');
 Route::apiResource('/category', 'Api\CateController');
 Route::apiResource('/parent_category', 'Api\ParentCategoryController');
+Route::apiResource('/customer', 'Api\CustomerController');
+Route::apiResource('/comment', 'Api\CommentController');
+Route::apiResource('/users', 'Api\UsersController');
+
