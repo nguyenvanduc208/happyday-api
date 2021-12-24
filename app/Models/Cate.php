@@ -13,7 +13,7 @@ class Cate extends Model
     protected $fillable=[
         'name'
     ];
-    public $timesptamps =false;
+    public $timestamps =false;
     public function Post(){
         return $this ->hasMany(Post::class,'name','id');
     }
