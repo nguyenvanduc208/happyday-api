@@ -7,14 +7,8 @@ use Illuminate\Http\Request;
 
 class ResortController extends Controller
 {
-    // /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //aaa
         return response(Room::all(), 200);
     }
 
