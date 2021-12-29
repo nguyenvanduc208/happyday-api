@@ -36,21 +36,23 @@ class CateController extends Controller
      * @param  \App\Models\Cate  $cate
      * @return \Illuminate\Http\Response
      */
-    public function show(Cate $cate)
+    public function show($id)
     {
+        $cate = Cate::find($id);
         return response($cate, 200);
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specifaied resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Cate  $cate
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, cate $cate)
-    {
-        $cate->update($request->all());
+    public function update(Request $request,$id)
+    {   
+        $model = Cate::find($id);
+        $model->update($request->all());
         return response('Ok', 200);
     }
 
@@ -60,9 +62,9 @@ class CateController extends Controller
      * @param  \App\Models\Cate  $cate
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Cate $cate)
+    public function destroy($id)
     {
-        $cate->delete();
+        Cate::destroy($id);
         return response('ok',200);
     }
 }

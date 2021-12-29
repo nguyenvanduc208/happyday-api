@@ -9,7 +9,6 @@ class Cate extends Model
 {
     use HasFactory;
     protected $table="category";
-    protected $primaryKey="id";
     protected $fillable=[
         'name'
     ];
