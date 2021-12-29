@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Models\Customer;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class CustomerController extends Controller
 {
@@ -26,8 +27,12 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        Customer::create($request->all());
-        return response('ok', 200);
+        $model = new Customer();
+        $model->fill($request->all());
+        $model->password = Hash::make($request->password);
+        $model->password_confirm = Hash::make($request->password_confirm);
+        $model->save();
+        return response($model);
     }
 
     /**
