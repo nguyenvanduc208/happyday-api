@@ -32,7 +32,7 @@ class CustomerController extends Controller
         $model->password = Hash::make($request->password);
         $model->password_confirm = Hash::make($request->password_confirm);
         $model->save();
-        return response($model);
+        return response('ok', 201);
     }
 
     /**
