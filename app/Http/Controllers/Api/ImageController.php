@@ -26,8 +26,10 @@ class ImageController extends Controller
      */
     public function store(Request $request)
     {
-        Image::create($request->all());
-        return response('ok',201);
+        $model = new Image();
+        $model->fill($request->all());
+        $model->save();
+        return response($model,201);
     }
 
     /**

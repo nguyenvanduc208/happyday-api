@@ -2,14 +2,18 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\Room;
+use App\Models\Image;
+use App\Models\Resort;
 use Illuminate\Http\Request;
+use App\Http\Resources\Resort as ResortResource;
 
 class ResortController extends Controller
 {
     public function index()
     {
-        return response(Room::all(), 200);
+        $resorts = Resort::all();
+        dd($resorts);
+        return ResortResource::collection($resorts);
     }
 
     /**
@@ -19,8 +23,8 @@ class ResortController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        Room::create($request->all());
+    {   
+        Resort::create($request->all());
         return response('ok', 201);
     }
 
@@ -30,9 +34,10 @@ class ResortController extends Controller
      * @param  \App\Models\Restaurant  $restaurant
      * @return \Illuminate\Http\Response
      */
-    public function show(Room $room)
+    public function show(Resort $Resort)
     {
-        return response($room, 200);
+        dd($Resort);
+        return response($Resort, 200);
     }
 
     /**
@@ -42,9 +47,9 @@ class ResortController extends Controller
      * @param  \App\Models\Restaurant  $restaurant
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Room $room)
+    public function update(Request $request, Resort $Resort)
     {
-        $room->update($request->all());
+        $Resort->update($request->all());
         return response('ok', 200);
     }
 
@@ -54,9 +59,9 @@ class ResortController extends Controller
      * @param  \App\Models\Restaurant  $restaurant
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Room $room)
+    public function destroy(Resort $Resort)
     {
-        $room->delete();
+        $Resort->delete();
         return response('ok', 200);
     }
 }
