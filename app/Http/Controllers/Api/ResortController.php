@@ -12,8 +12,7 @@ class ResortController extends Controller
     public function index()
     {
         $resorts = Resort::all();
-        dd($resorts);
-        return ResortResource::collection($resorts);
+        return response($resorts,200);
     }
 
     /**
@@ -23,7 +22,7 @@ class ResortController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {   
+    {
         Resort::create($request->all());
         return response('ok', 201);
     }
@@ -36,8 +35,30 @@ class ResortController extends Controller
      */
     public function show(Resort $Resort)
     {
-        dd($Resort);
-        return response($Resort, 200);
+        $response = array(
+            'status' => true,
+            'message' => 'Success',
+            'data' => [
+                'id' => $Resort->id,
+                'name' => $Resort->name,
+                'price' => $Resort->price,
+                'limit' => $Resort->limit, 
+                'size' => $Resort->size, 
+                'view' => $Resort->view,
+                'bed' => $Resort->bed,
+                'category_id' => $Resort->category_id, 
+                'category_name' =>$Resort->category->name,
+                'image_id' => $Resort->image_id,
+                'image_path' => $Resort->image->path,
+                'desc' => $Resort->desc,
+                'create_at' => $Resort->created_at,
+                'update_at' => $Resort->updated_at 
+            ]
+        );
+
+
+
+        return response($response, 200);
     }
 
     /**

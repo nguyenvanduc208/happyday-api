@@ -51,7 +51,7 @@ class AboutController extends Controller
     public function update(Request $request, About $about)
     {
         $about->update($request->all());
-        return response('Ok', 200);
+        return response('ok', 200);
     }
 
     /**

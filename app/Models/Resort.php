@@ -9,19 +9,19 @@ class Resort extends Model
 {
     use HasFactory;
     protected $table ='resort';
-    // protected $fillable = [
-    //     'name',
-    //     'price',
-    //     'limit',
-    //     'size',
-    //     'view',
-    //     'bed',
-    //     'view',
-    //     'category_id',
-    //     'image_id',
-    //     'desc',
+    protected $fillable = [
+        'name',
+        'price',
+        'limit',
+        'size',
+        'view',
+        'bed',
+        'view',
+        'category_id',
+        'image_id',
+        'desc',
         
-    // ];
+    ];
 
     protected $casts = [
         'email_verified_at' => 'datetime',
@@ -29,6 +29,11 @@ class Resort extends Model
 
     public function category()
     {
-        return $this->hasMany(Cate::class,'category_id');
+        return $this->belongsTo(Cate::class,'category_id','id');
+    }
+
+    public function image()
+    {
+        return $this->belongsTo(Image::class,'image_id','id');
     }
 }
