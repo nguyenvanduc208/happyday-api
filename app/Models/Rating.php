@@ -8,10 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Rating extends Model
 {
     use HasFactory;
-    protected $table    ="food";
-    protected $primaryKey="id";
+    protected $table    ="rating";
     protected $fillable=[
-        'resort_id','customer','rating'
+        'resort_id','customer_id','rating'
     ];
-    public $timestamp =false;
+
+    public $timestamps = false;
 }

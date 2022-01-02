@@ -6,6 +6,7 @@ use App\Models\Image;
 use App\Models\Resort;
 use Illuminate\Http\Request;
 use App\Http\Resources\Resort as ResortResource;
+use App\Models\Rating;
 
 class ResortController extends Controller
 {
@@ -81,7 +82,13 @@ class ResortController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy(Resort $Resort)
-    {
+    { 
+        $ratings = Rating::all();
+        foreach($ratings as $rating){
+            if($rating->resort_id == $Resort->id){
+                $rating->delete();
+            }
+        }
         $Resort->delete();
         return response('ok', 200);
     }
