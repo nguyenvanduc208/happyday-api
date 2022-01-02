@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Cate;
+use App\Models\Resort;
 use Illuminate\Http\Request;
 
 class CateController extends Controller
@@ -64,6 +65,11 @@ class CateController extends Controller
      */
     public function destroy($id)
     {
+        $resorts = Resort::find('category_id' , $id);
+        foreach ($resorts as $resort){
+            $resort->category_id = 1;
+            $resort->save();
+        }
         Cate::destroy($id);
         return response('ok',200);
     }
