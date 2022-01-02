@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Cate;
+use App\Models\Food;
 use App\Models\Resort;
 use Illuminate\Http\Request;
 
@@ -65,10 +66,21 @@ class CateController extends Controller
      */
     public function destroy($id)
     {
-        $resorts = Resort::find('category_id' , $id);
+
+        $resorts = Resort::all();
         foreach ($resorts as $resort){
-            $resort->category_id = 1;
-            $resort->save();
+            if($resort->category_id == $id){
+                $resort->category_id = 1;
+                $resort->save();
+            }
+        }
+
+        $foods = Food::all();
+        foreach ($foods as $food){
+            if($food->category_id == $id){
+                $food->category_id = 1;
+                $food->save();
+            }
         }
         Cate::destroy($id);
         return response('ok',200);
