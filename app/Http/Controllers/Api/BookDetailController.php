@@ -26,7 +26,10 @@ class BookDetailController extends Controller
      */
     public function store(Request $request)
     {
-        BookDetail::create($request->all());
+        $model = new BookDetail();
+        $model->fill($request->all());
+        $model->status = 1;
+        $model->save();
         return response('ok',201);
     }
 

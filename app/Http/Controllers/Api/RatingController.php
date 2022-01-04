@@ -34,9 +34,9 @@ class RatingController extends Controller
      * @param  \App\Models\Restaurant  $restaurant
      * @return \Illuminate\Http\Response
      */
-    public function show(Rating $rate)
+    public function show($id)
     {
-        return response($rate, 200);
+        return response(Rating::find($id), 200);
     }
 
     /**
@@ -46,9 +46,11 @@ class RatingController extends Controller
      * @param  \App\Models\Restaurant  $restaurant
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Rating $rate)
+    public function update(Request $request, $id)
     {
-        $rate->update($request->all());
+        $model = Rating::find($id);
+        $model->fill($request->all());
+        $model->save();
         return response('ok', 200);
     }
 
@@ -58,9 +60,9 @@ class RatingController extends Controller
      * @param  \App\Models\Restaurant  $restaurant
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Rating $rate)
+    public function destroy($id)
     {
-        $rate->delete();
+        Rating::destroy($id);
         return response('ok', 200);
     }
 }
