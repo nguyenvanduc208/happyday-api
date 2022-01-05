@@ -26,7 +26,10 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
-        Booking::create($request->all());
+        $model = new Booking();
+        $model->fill($request->all());
+        $model->status = 1;
+        $model->save();
         return response('ok',201);
     }
 

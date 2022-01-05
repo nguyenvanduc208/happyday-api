@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class UpdateTableBookingDetail extends Migration
+class UpdateBookingTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class UpdateTableBookingDetail extends Migration
      */
     public function up()
     {
-        Schema::table('booking_detail', function (Blueprint $table) {
-            $table->integer('status');
+        Schema::table('booking', function (Blueprint $table) {
+            $table->enum('status',[0,1]);
+            $table->string('payment_img');
         });
     }
 
@@ -25,8 +26,10 @@ class UpdateTableBookingDetail extends Migration
      */
     public function down()
     {
-        Schema::table('booking_detail', function (Blueprint $table) {
-            $table->integer('status');
+        Schema::table('booking', function (Blueprint $table) {
+            $table->dropColumn('status',[0,1]);
+            $table->dropColumn('payment_img');
+            
         });
     }
 }

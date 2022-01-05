@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\BookDetail;
+use App\Models\Bank;
 use Illuminate\Http\Request;
 
-class BookDetailController extends Controller
+class BankController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class BookDetailController extends Controller
      */
     public function index()
     {
-        return response(BookDetail::all(),200);
+        return response(Bank::all(), 200);
     }
 
     /**
@@ -26,8 +26,7 @@ class BookDetailController extends Controller
      */
     public function store(Request $request)
     {
-        BookDetail::create($request->all());
-        return response('ok',201);
+        //
     }
 
     /**
@@ -38,7 +37,7 @@ class BookDetailController extends Controller
      */
     public function show($id)
     {
-        return response(BookDetail::find($id), 200);
+        //
     }
 
     /**
@@ -50,8 +49,7 @@ class BookDetailController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $model = BookDetail::where('id',$id)->update($request->all());
-        return response('ok',200);
+        //
     }
 
     /**
@@ -62,7 +60,6 @@ class BookDetailController extends Controller
      */
     public function destroy($id)
     {
-        BookDetail::destroy($id);
-        return response('ok',200);
+        //
     }
 }
