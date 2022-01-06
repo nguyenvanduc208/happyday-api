@@ -14,7 +14,7 @@ class UpdateBookingTable extends Migration
     public function up()
     {
         Schema::table('booking', function (Blueprint $table) {
-            $table->enum('status',[0,1]);
+            $table->integer('status');
             $table->string('payment_img');
         });
     }
@@ -27,7 +27,7 @@ class UpdateBookingTable extends Migration
     public function down()
     {
         Schema::table('booking', function (Blueprint $table) {
-            $table->dropColumn('status',[0,1]);
+            $table->dropColumn('status');
             $table->dropColumn('payment_img');
             
         });
