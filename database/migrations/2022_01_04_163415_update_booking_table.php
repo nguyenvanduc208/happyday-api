@@ -27,8 +27,8 @@ class UpdateBookingTable extends Migration
     public function down()
     {
         Schema::table('booking', function (Blueprint $table) {
-            $table->dropColumn('status');
-            $table->dropColumn('payment_img');
+            $table->dropColumn('status')->nullable();
+            $table->dropColumn('payment_img')->nullable();
             
         });
     }
