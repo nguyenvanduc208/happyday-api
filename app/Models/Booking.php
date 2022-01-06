@@ -12,6 +12,6 @@ class Booking extends Model
     protected $fillable = [
         'customer_id','resort_id','price','address',
         'number_phone','check_in_date','check_out_date',
-        'count_people'
+        'count_people','status','payment_img'
     ];
 }

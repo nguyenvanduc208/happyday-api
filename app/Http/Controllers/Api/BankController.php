@@ -26,7 +26,10 @@ class BankController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $model = new Bank();
+        $model->fill($request->all());
+        $model->save();
+        return response('ok',200);
     }
 
     /**
@@ -37,7 +40,7 @@ class BankController extends Controller
      */
     public function show($id)
     {
-        //
+        return response(Bank::find($id),200);
     }
 
     /**
@@ -49,7 +52,10 @@ class BankController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $model = Bank::find($id);
+        $model->fill($request->all());
+        $model->save();
+        return response('ok',200);
     }
 
     /**
@@ -60,6 +66,7 @@ class BankController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Bank::destroy($id);
+        return response('ok',200);
     }
 }

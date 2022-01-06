@@ -34,4 +34,5 @@ Route::apiResource('/parent_category', 'Api\ParentCategoryController');
 Route::apiResource('/customer', 'Api\CustomerController');
 Route::apiResource('/comment', 'Api\CommentController');
 Route::apiResource('/users', 'Api\UsersController');
+Route::apiResource('/bank', 'Api\BankController');
 
