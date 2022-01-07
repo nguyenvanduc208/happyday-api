@@ -28,7 +28,9 @@ class BookingController extends Controller
     {
         $model = new Booking();
         $model->fill($request->all());
-        $model->status = 1;
+        if($request->has('status')){
+            $model->status = 0;
+        }
         $model->save();
         return response('ok',201);
     }

@@ -15,7 +15,7 @@ class UpdateBookingTable extends Migration
     {
         Schema::table('booking', function (Blueprint $table) {
             $table->integer('status')->nullable($value = true);
-            $table->string('payment_img')->nullable($value = true);
+            $table->text('payment_img')->nullable($value = true);
         });
     }
 
