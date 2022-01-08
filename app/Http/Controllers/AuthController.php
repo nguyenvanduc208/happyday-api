@@ -12,7 +12,10 @@ use Laravel\Sanctum\HasApiTokens;
 class AuthController extends Controller
 {
     public function register(Request $request){
-        $user = User::create($request->query->all());
+        $user = new User();
+        $user->fill($request->all());
+        $user->password = Hash::make($request->password);
+        $user->save();
         $tokenResult = $user->createToken('authToken')->plainTextToken;
 
         $response = [
