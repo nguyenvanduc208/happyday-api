@@ -582,6 +582,8 @@ class ComposerStaticInit41e41c66e667972c432ca91f212b5a05
         'App\\Http\\Controllers\\Api\\RatingController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/RatingController.php',
         'App\\Http\\Controllers\\Api\\ResortController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/ResortController.php',
         'App\\Http\\Controllers\\Api\\RestaurantController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/RestaurantController.php',
+        'App\\Http\\Controllers\\Api\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/UserController.php',
+        'App\\Http\\Controllers\\AuthController' => __DIR__ . '/../..' . '/app/Http/Controllers/AuthController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
         'App\\Http\\Controllers\\Auth\\ResignterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResignterController.php',
         'App\\Http\\Controllers\\Comment\\CommentController' => __DIR__ . '/../..' . '/app/Http/Controllers/Comment/CommentController.php',

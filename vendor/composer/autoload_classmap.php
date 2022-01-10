@@ -26,6 +26,8 @@ return array(
     'App\\Http\\Controllers\\Api\\RatingController' => $baseDir . '/app/Http/Controllers/Api/RatingController.php',
     'App\\Http\\Controllers\\Api\\ResortController' => $baseDir . '/app/Http/Controllers/Api/ResortController.php',
     'App\\Http\\Controllers\\Api\\RestaurantController' => $baseDir . '/app/Http/Controllers/Api/RestaurantController.php',
+    'App\\Http\\Controllers\\Api\\UserController' => $baseDir . '/app/Http/Controllers/Api/UserController.php',
+    'App\\Http\\Controllers\\AuthController' => $baseDir . '/app/Http/Controllers/AuthController.php',
     'App\\Http\\Controllers\\Auth\\LoginController' => $baseDir . '/app/Http/Controllers/Auth/LoginController.php',
     'App\\Http\\Controllers\\Auth\\ResignterController' => $baseDir . '/app/Http/Controllers/Auth/ResignterController.php',
     'App\\Http\\Controllers\\Comment\\CommentController' => $baseDir . '/app/Http/Controllers/Comment/CommentController.php',

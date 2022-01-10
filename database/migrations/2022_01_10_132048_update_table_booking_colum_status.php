@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBlogTable extends Migration
+class UpdateTableBookingColumStatus extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,8 @@ class CreateBlogTable extends Migration
      */
     public function up()
     {
-        Schema::create('blog', function (Blueprint $table) {
-            $table->id();
-            $table->text('title');
-            $table->text('desc');
+        Schema::table('booking', function (Blueprint $table) {
+            $table->integer('status')->nullable( $value = true);
         });
     }
 
@@ -27,6 +25,8 @@ class CreateBlogTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('blog');
+        Schema::table('booking', function (Blueprint $table) {
+            //
+        });
     }
 }
