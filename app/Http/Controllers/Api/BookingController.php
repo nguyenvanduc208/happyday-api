@@ -72,7 +72,7 @@ class BookingController extends Controller
     }
 
     public function customer ($id){
-        $data = Booking::where('customer_id' , $id)->get();
+        $data = Booking::where('user_id' , $id)->get();
         return response($data,200);
         
     }
