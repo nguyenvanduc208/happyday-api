@@ -38,6 +38,7 @@ Route::group(['middleware' => ['auth:sanctum']], function (){
     Route::apiResource('/comment', 'Api\CommentController')->only(['store','update','destroy']);
     Route::apiResource('/users', 'Api\UsersController')->only(['store','update','destroy']);
     Route::apiResource('/bank', 'Api\BankController')->only(['store','update','destroy']);
+    Route::apiResource('/user', 'Api\UserController')->only(['store','update','destroy']);
     Route::get('/logout',[AuthController::class,'logout']);
 });
 
@@ -60,6 +61,7 @@ Route::apiResource('/customer', 'Api\CustomerController')->only(['index','show']
 Route::apiResource('/comment', 'Api\CommentController')->only(['index','show']);
 Route::apiResource('/users', 'Api\UsersController')->only(['index','show']);
 Route::apiResource('/bank', 'Api\BankController')->only(['index','show']);
+Route::apiResource('/user', 'Api\UserController')->only(['index','show']);
 Route::get('/booking/customer/{id}',[BookingController::class,'customer']);
 
 
