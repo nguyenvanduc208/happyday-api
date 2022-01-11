@@ -10,7 +10,7 @@ class Rating extends Model
     use HasFactory;
     protected $table    ="rating";
     protected $fillable=[
-        'resort_id','customer_id','rating'
+        'resort_id','user_id','rating'
     ];
 
     public $timestamps = false;
