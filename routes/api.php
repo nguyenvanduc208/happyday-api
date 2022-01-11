@@ -62,7 +62,7 @@ Route::apiResource('/comment', 'Api\CommentController')->only(['index','show']);
 Route::apiResource('/users', 'Api\UsersController')->only(['index','show']);
 Route::apiResource('/bank', 'Api\BankController')->only(['index','show']);
 Route::apiResource('/user', 'Api\UserController')->only(['index','show']);
-Route::get('/booking/customer/{id}',[BookingController::class,'customer']);
+Route::get('/booking/user/{id}',[BookingController::class,'customer']);
 
 
 
