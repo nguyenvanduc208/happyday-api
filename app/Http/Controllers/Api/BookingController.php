@@ -15,7 +15,7 @@ class BookingController extends Controller
      */
     public function index()
     {
-        return response(Booking::all(),200);
+        return response(Booking::orderBy('id','DESC')->get(),200);
     }
 
     /**
@@ -69,5 +69,11 @@ class BookingController extends Controller
     {
         Booking::destroy($id);
         return response('ok',200);
+    }
+
+    public function customer ($id){
+        $data = Booking::where('customer_id' , $id)->get();
+        return response($data,200);
+        
     }
 }
