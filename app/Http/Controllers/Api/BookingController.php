@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Booking;
 use Illuminate\Http\Request;
+use App\Mail\SendMail;
+use Illuminate\Support\Facades\Mail;
+
 
 class BookingController extends Controller
 {
@@ -32,6 +35,9 @@ class BookingController extends Controller
             $model->status = 0;
         }
         $model->save();
+        //Send mail
+        Mail::to('manhvh7621@gmail.com')->send(new SendMail($request->resortName, $request->name, $request->address, $request->numberPhone, $request->totalPrice, $request->countPeople));
+
         return response('ok',201);
     }
 
